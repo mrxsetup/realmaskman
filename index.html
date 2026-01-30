@@ -1,121 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>REAL MASK MAN</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2277837602711065');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2277837602711065&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root {
+--bg1: #0b1d26;
+--bg2: #102a36;
+--accent: #00ffd5;
+--text: #eafcff;
+--glass: rgba(255,255,255,0.08);
+--border: rgba(255,255,255,0.15);
+}
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+font-family:'Inter',sans-serif;
 }
 
 body{
-background: radial-gradient(circle at top, #000, #030303);
-color:white;
-text-align:center;
 min-height:100vh;
-overflow:hidden;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+display:flex;
+align-items:center;
+justify-content:center;
+color:var(--text);
 }
 
-.profile{
-width:155px;
-height:155px;
+.card{
+width:92%;
+max-width:420px;
+background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+backdrop-filter:blur(18px);
+border:1px solid var(--border);
+border-radius:28px;
+padding:28px 22px 24px;
+text-align:center;
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+.badge{
+display:inline-block;
+padding:10px 20px;
+border-radius:999px;
+background:linear-gradient(90deg,#00ffd5,#00bcd4);
+color:#002b2b;
+font-weight:700;
+font-size:13px;
+margin-bottom:22px;
+box-shadow:0 0 20px rgba(0,255,213,0.6);
+}
+
+.logo{
+width:120px;
+height:120px;
 border-radius:50%;
-border:4px solid #00ffe1;
-box-shadow:0 0 35px #00ffe1;
-animation:pulse 2s infinite;
-margin:auto;
+margin:0 auto 18px;
+overflow:hidden;
+border:3px solid var(--accent);
+box-shadow:0 0 30px rgba(0,255,213,0.8);
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 h1{
-margin-top:18px;
-font-size:30px;
-font-weight:900;
-letter-spacing:1px;
-text-shadow:0 0 15px #00ffe1;
+font-size:28px;
+font-weight:800;
+margin-bottom:8px;
 }
 
-.counter{
-margin-top:12px;
-font-size:22px;
-font-weight:bold;
-color:#00ffe1;
-text-shadow:0 0 10px #00ffe1;
+.subtitle{
+font-size:14px;
+opacity:.85;
+line-height:1.6;
+margin-bottom:24px;
+}
+
+.stats{
+display:flex;
+gap:12px;
+margin-bottom:26px;
+}
+
+.stat{
+flex:1;
+background:var(--glass);
+border:1px solid var(--border);
+border-radius:18px;
+padding:14px 10px;
+}
+
+.stat strong{
+display:block;
+font-size:18px;
+color:var(--accent);
+}
+
+.stat span{
+font-size:12px;
+opacity:.8;
 }
 
 .btn{
 display:block;
-margin:18px auto;
-padding:17px 30px;
-width:88%;
-max-width:380px;
-border-radius:15px;
-background:linear-gradient(135deg,#00ffe1,#00bfff);
-color:black;
-font-weight:900;
+width:100%;
+padding:18px;
+font-size:18px;
+font-weight:800;
+border-radius:20px;
 text-decoration:none;
-letter-spacing:.5px;
-transition:.2s;
-box-shadow:0 0 22px #00ffe1;
+color:#002b2b;
+background:linear-gradient(90deg,#00ffd5,#00bcd4);
+box-shadow:0 0 30px rgba(0,255,213,0.8);
+animation:pulse 1.8s infinite, shake 4s infinite;
 }
 
-.btn:hover{
-transform:scale(1.08);
-background:linear-gradient(135deg,#00bfff,#00ffe1);
+@keyframes pulse{
+0%{box-shadow:0 0 20px rgba(0,255,213,.6)}
+50%{box-shadow:0 0 40px rgba(0,255,213,1)}
+100%{box-shadow:0 0 20px rgba(0,255,213,.6)}
 }
 
-.glow-bg{
-position:absolute;
-width:420px;
-height:420px;
-background:#00ffe1;
-filter:blur(200px);
-opacity:.15;
-top:-130px;
-left:-130px;
-z-index:-1;
+@keyframes shake{
+0%,100%{transform:translateX(0)}
+92%{transform:translateX(-2px)}
+94%{transform:translateX(2px)}
+96%{transform:translateX(-2px)}
+98%{transform:translateX(2px)}
+}
+
+.redirect{
+font-size:12px;
+opacity:.6;
+margin-top:12px;
+}
+
+.ads{
+margin-top:22px;
+font-size:11px;
+}
+
+.ads a{
+color:#fff;
+font-weight:700;
+text-decoration:none;
+background:rgba(0,0,0,0.75);
+padding:6px 14px;
+border-radius:999px;
+display:inline-block;
 }
 </style>
 </head>
 
 <body>
 
-<div class="glow-bg"></div>
+<div class="card">
 
-<br><br><br>
+<div class="badge">LIVE MATCH PREDICTION ACTIVE</div>
 
-<img class="profile" src="https://github.com/mrxsetup/realmaskman/blob/main/MASK.jpg?raw=true">
+<div class="logo">
+<img src="https://github.com/mrxsetup/realmaskman/blob/main/MASK.jpg?raw=true">
+</div>
 
 <h1>REAL MASK MAN</h1>
 
-<div class="counter">
-🔥 <span id="count">280</span> Live Members Online
+<p class="subtitle">
+India’s Most Accurate Cricket Predictions.<br>
+Join for Back-to-Back Wins
+</p>
+
+<div class="stats">
+<div class="stat">
+<strong>98%</strong>
+<span>Accuracy</span>
+</div>
+<div class="stat">
+<strong>FREE</strong>
+<span>Joining</span>
+</div>
+<div class="stat">
+<strong>24/7</strong>
+<span>Support</span>
+</div>
 </div>
 
-<br>
+<a href="https://t.me/+Rzp5wo7o8T02ODZl" class="btn">JOIN TELEGRAM →</a>
 
-<a href="https://t.me/+Rzp5wo7o8T02ODZl" class="btn">🚀 JOIN TELEGRAM CHANNEL</a>
+<div class="redirect">Auto redirect in 40 seconds</div>
 
-<a href="https://t.me/+Rzp5wo7o8T02ODZl" class="btn">💬 CONTACT ADMIN</a>
+<div class="ads">
+<a href="https://t.me/+ULd5M0qaUOM0NjM1">Ads by Adsgram</a>
+</div>
+
+</div>
 
 <script>
-let count = 280;
-setInterval(() => {
-count += Math.floor(Math.random()*6)+1;
-document.getElementById("count").innerText = count;
-}, 90);
+setTimeout(() => {
+window.location.href = "https://t.me/+Rzp5wo7o8T02ODZl";
+}, 40000);
 </script>
 
 </body>
