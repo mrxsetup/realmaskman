@@ -1,183 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REAL MASK MAN</title>
+<title>AK CRICKET TRADER</title>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2277837602711065');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2277837602711065&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
---bg1: #0b1d26;
---bg2: #102a36;
---accent: #00ffd5;
---text: #eafcff;
---glass: rgba(255,255,255,0.08);
---border: rgba(255,255,255,0.15);
-}
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:Poppins,sans-serif;
 }
 
 body{
-min-height:100vh;
-background:linear-gradient(135deg,var(--bg1),var(--bg2));
+background: radial-gradient(circle,#000,#060818);
+color:white;
 display:flex;
-align-items:center;
 justify-content:center;
-color:var(--text);
+align-items:center;
+height:100vh;
+overflow:hidden;
 }
 
 .card{
-width:92%;
-max-width:420px;
-background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
-backdrop-filter:blur(18px);
-border:1px solid var(--border);
-border-radius:28px;
-padding:28px 22px 24px;
+width:350px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(14px);
+border-radius:22px;
+padding:22px;
 text-align:center;
-box-shadow:0 30px 80px rgba(0,0,0,0.6);
+box-shadow:0 0 35px rgba(0,255,255,0.25);
+animation:float 4s ease-in-out infinite;
+border:1px solid rgba(255,255,255,0.12);
 }
 
-.badge{
-display:inline-block;
-padding:10px 20px;
-border-radius:999px;
-background:linear-gradient(90deg,#00ffd5,#00bcd4);
-color:#002b2b;
-font-weight:700;
-font-size:13px;
-margin-bottom:22px;
-box-shadow:0 0 20px rgba(0,255,213,0.6);
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
 }
 
-.logo{
-width:120px;
-height:120px;
+.profile{
+width:130px;
+height:130px;
+margin:auto;
 border-radius:50%;
-margin:0 auto 18px;
 overflow:hidden;
-border:3px solid var(--accent);
-box-shadow:0 0 30px rgba(0,255,213,0.8);
+border:4px solid cyan;
+box-shadow:0 0 30px cyan;
+animation:pulse 2s infinite;
 }
 
-.logo img{
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.07)}
+100%{transform:scale(1)}
+}
+
+.profile img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:.5s;
+}
+
+.profile:hover img{
+transform:scale(1.15);
 }
 
 h1{
-font-size:28px;
+margin-top:14px;
 font-weight:800;
-margin-bottom:8px;
+letter-spacing:1px;
 }
 
-.subtitle{
-font-size:14px;
-opacity:.85;
-line-height:1.6;
-margin-bottom:24px;
-}
-
-.stats{
-display:flex;
-gap:12px;
-margin-bottom:26px;
-}
-
-.stat{
-flex:1;
-background:var(--glass);
-border:1px solid var(--border);
-border-radius:18px;
-padding:14px 10px;
-}
-
-.stat strong{
-display:block;
-font-size:18px;
-color:var(--accent);
-}
-
-.stat span{
-font-size:12px;
+.sub{
 opacity:.8;
+margin-bottom:10px;
+}
+
+.count{
+font-weight:700;
+color:cyan;
+margin:8px 0;
 }
 
 .btn{
 display:block;
-width:100%;
-padding:18px;
-font-size:18px;
-font-weight:800;
-border-radius:20px;
-text-decoration:none;
-color:#002b2b;
-background:linear-gradient(90deg,#00ffd5,#00bcd4);
-box-shadow:0 0 30px rgba(0,255,213,0.8);
-animation:pulse 1.8s infinite, shake 4s infinite;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 20px rgba(0,255,213,.6)}
-50%{box-shadow:0 0 40px rgba(0,255,213,1)}
-100%{box-shadow:0 0 20px rgba(0,255,213,.6)}
-}
-
-@keyframes shake{
-0%,100%{transform:translateX(0)}
-92%{transform:translateX(-2px)}
-94%{transform:translateX(2px)}
-96%{transform:translateX(-2px)}
-98%{transform:translateX(2px)}
-}
-
-.redirect{
-font-size:12px;
-opacity:.6;
 margin-top:12px;
-}
-
-.ads{
-margin-top:22px;
-font-size:11px;
-}
-
-.ads a{
-color:#fff;
-font-weight:700;
+padding:14px;
+border-radius:14px;
 text-decoration:none;
-background:rgba(0,0,0,0.75);
-padding:6px 14px;
-border-radius:999px;
-display:inline-block;
+font-weight:700;
+color:white;
+background:linear-gradient(135deg,#00ffff,#0066ff);
+transition:.25s;
+box-shadow:0 0 20px rgba(0,255,255,.5);
+}
+
+.btn:hover{
+transform:scale(1.08);
+filter:brightness(1.3);
+box-shadow:0 0 35px cyan;
 }
 </style>
 </head>
@@ -186,49 +112,19 @@ display:inline-block;
 
 <div class="card">
 
-<div class="badge">LIVE MATCH PREDICTION ACTIVE</div>
-
-<div class="logo">
-<img src="https://github.com/mrxsetup/realmaskman/blob/main/MASK.jpg?raw=true">
+<div class="profile">
+<img src="https://github.com/mrxsetup/hackerprediction/blob/main/hackerlogo.jpg?raw=true">
 </div>
 
-<h1>REAL MASK MAN</h1>
+<h1>AK CRICKET TRADER</h1>
+<div class="sub">100% Trusted Predictions</div>
 
-<p class="subtitle">
-India’s Most Accurate Cricket Predictions.<br>
-Join for Back-to-Back Wins
-</p>
+<div class="count">🔥 60,000+ Members Joined</div>
 
-<div class="stats">
-<div class="stat">
-<strong>98%</strong>
-<span>Accuracy</span>
-</div>
-<div class="stat">
-<strong>FREE</strong>
-<span>Joining</span>
-</div>
-<div class="stat">
-<strong>24/7</strong>
-<span>Support</span>
-</div>
-</div>
-
-<a href="https://t.me/+Rzp5wo7o8T02ODZl" class="btn">JOIN TELEGRAM →</a>
-
-<div class="redirect">Auto redirect in 40 seconds</div>
-
-<div class="ads">
-<a href="https://t.me/+ULd5M0qaUOM0NjM1">Ads by Adsgram</a>
-</div>
+<a href="https://t.me/YOURCHANNEL" class="btn">JOIN TELEGRAM</a>
+<a href="https://t.me/YOURCHANNEL" class="btn">GET FREE TIPS</a>
 
 </div>
-
-<script>
-setTimeout(() => {
-window.location.href = "https://t.me/+Rzp5wo7o8T02ODZl";
-}, 40000);
-</script>
 
 </body>
 </html>
